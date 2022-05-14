@@ -30,10 +30,13 @@ class _ListPageState extends State<ListPage> {
     // getAliensFromSpace(aliensResult);
     // Ustawianie stanu aplikacji
 
-    setState(() {
-      _aliensList = aliensResult.text;
-      getAliensFromSpace(aliensResult.text);
-    });
+    if (aliensResult != null) {
+      setState(() {
+        _aliensList = aliensResult.text;
+        getAliensFromSpace(aliensResult.text);
+      });
+    }
+
   }
 
   void getAliensFromSpace(searchAlien) async {
